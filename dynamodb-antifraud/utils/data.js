@@ -29,6 +29,7 @@ function getRandomItem() {
         "year_month_day_hh_mm_ss": yearMonthDay,
         "epoch_time": epochTime,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "merchant_reference": "740f66b7-862a-4664-a704-704fcc275fa9",
         "payment_id": paymentId,
         "card_id": "f669a783-8c2f-4ff0-bdc9-ea343283d8cd",
@@ -43,7 +44,11 @@ function getRandomItem() {
     }
 }
 =======
+=======
+>>>>>>> 3aa252f (Adds content)
         "payment_id": paymentId,
+=======
+>>>>>>> 6448581 (Adds content)
         "band": "VISA",
         "date": date.format("YYYY-MM-DDTHH:mm:ss"),
         "payment_status": paymentStatus,
