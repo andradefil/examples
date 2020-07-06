@@ -7,10 +7,16 @@ module.exports = {
 
 function getRandomItem() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const walletAmount = faker.finance.amount()
     const cardAmount = faker.finance.amount()
 =======
 >>>>>>> ce25bba (Adds content)
+=======
+=======
+    const cardAmount = faker.finance.amount()
+>>>>>>> 40105ef (Adds content)
+>>>>>>> c3d9612 (Adds content)
     const totalAmount = walletAmount + cardAmount
     const paymentStatus = faker.random.arrayElement(['AUTHORIZED', 'NOT_AUTHORIZED'])
     const paymentId = faker.random.uuid()
