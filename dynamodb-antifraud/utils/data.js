@@ -6,8 +6,11 @@ module.exports = {
 }
 
 function getRandomItem() {
+<<<<<<< HEAD
     const walletAmount = faker.finance.amount()
     const cardAmount = faker.finance.amount()
+=======
+>>>>>>> ce25bba (Adds content)
     const totalAmount = walletAmount + cardAmount
     const paymentStatus = faker.random.arrayElement(['AUTHORIZED', 'NOT_AUTHORIZED'])
     const paymentId = faker.random.uuid()
@@ -19,6 +22,7 @@ function getRandomItem() {
         "customer_reference": "5665cb89-3392-4dd9-b1d1-9e6eb0fbd34b",
         "year_month_day_hh_mm_ss": yearMonthDay,
         "epoch_time": epochTime,
+<<<<<<< HEAD
         "merchant_reference": "740f66b7-862a-4664-a704-704fcc275fa9",
         "payment_id": paymentId,
         "card_id": "f669a783-8c2f-4ff0-bdc9-ea343283d8cd",
@@ -32,3 +36,13 @@ function getRandomItem() {
         "ttl": 1603645200
     }
 }
+=======
+        "payment_id": paymentId,
+        "band": "VISA",
+        "date": date.format("YYYY-MM-DDTHH:mm:ss"),
+        "payment_status": paymentStatus,
+        "total_ammount": totalAmount,
+        "ttl": 1603645200
+    }
+}
+>>>>>>> ce25bba (Adds content)
