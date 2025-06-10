@@ -1,7 +1,6 @@
 # Mono
 
-This is mono, a tiny collection of software that I've developed over
-time.  Most part of this repo are POCs or learning objectives. There
+Most part of this repo are POCs or examples. There
 is no intention to support or fix any problem found in any source code
 of this repo.
 
@@ -11,7 +10,7 @@ under MIT license.
 
 MIT License
 
-Copyright (c) 2025 Filipe W. V. Andrade
+Copyright (c) 2025 Filipe Andrade
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
