@@ -1,0 +1,23 @@
+;; exploring filter with maps
+
+(keys {:foo :bar})
+(filter key {:foo "bar"})
+
+(key [:foo :bar])
+(key {:foo :bar})
+
+(namespace (key {:foo :bar}))
+
+(filter key {:bar/foo :bar})
+
+(namespace :foo/bar)
+
+(into {} (filter (comp namespace key)  ))
+
+(def x )
+
+(x (clojure.lang.MapEntry. :foo :bar))
+
+(key {:foo :bar})
+
+(filter namespace {:foo :bar})

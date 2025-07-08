@@ -1,0 +1,77 @@
+;; return the last element from p without using last.
+#(loop [p %]
+  (if (next p)
+    (recur (next p))
+    (first p)))
+
+(first (take-last 1 [1 2 3 4 5]))
+(reduce (fn [_ v] v) [1 2 3 4 5])
+
+
+;; Write a function which returns the second to last element from a sequence.
+(def input [[1 2] [3 4]])
+(def input ["a" "b" "c"])
+(def expected [1 2])
+
+(last (drop-last input))
+
+
+;; Write a function which returns the Nth element from a sequence.
+(def f #(loop [pos 0 l %1]
+          (if (= pos %2)
+            (first l)
+            (recur (inc pos) (rest l)))))
+(f '(4 5 6 7) 2)
+
+(def f2 (fn [lst elt] (first (take (+ elt 1) lst))))
+(f2 '(4 5 6 7) 2)
+
+(def f3 (fn [a b] ((vec a) b)))
+(f3 '(4 5 6 7) 2)
+
+;; Vectors implement IFn, for invoke() of one argument, which they
+;; presume is an index and look up in themselves as if by nth,
+;; i.e. vectors are functions of their indices.
+(vec '(4 5 6 7))
+([1 2 3] 0)
+
+(def f4 (fn [x i] (.get x i)))
+(f3 '(4 5 6 7) 2)
+
+(seq '())
+
+;; Write a function which returns the total number of elements in a sequence.
+#(reduce (fn [c _] (inc c)) 0 (seq %))
+
+;; Write a function which reverses a sequence.
+
+;; understanding how reverse works. 
+
+(defn ^:private ^:static
+  reduce1
+  ([f coll]
+   (let [s (seq coll)]
+     (if s
+       (reduce1 f (first s) (next s))
+       (f))))
+  ([f val coll]
+   (let [s (seq coll)]
+     (if s
+       (if (chunked-seq? s)
+         (recur f 
+           (.reduce (chunk-first s) f val)
+           (chunk-next s))
+         (recur f (f val (first s)) (next s)))
+       val))))
+;; this is not lazy because needs to traverse the collection
+;; in this case reduce starts the accumulator with
+;; a Lists (IPersistentList)
+(defn reverse
+  "Returns a seq of the items in coll in reverse order. Not lazy."
+  {:added "1.0"
+   :static true}
+  [coll]
+  (reduce1 conj () coll))
+
+;;conj puts the item at the front of the list.
+(reduce conj () [1 2 3])
